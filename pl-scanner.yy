@@ -61,8 +61,12 @@ ALPHA [a-zA-Z]
 "~="                           {
                                         return OP_DIFF;
                   }
-
-
+"<"                           {
+                                        return OP_LT;
+                  }
+">"                           {
+                                        return OP_GT;
+                  }
 ";"							  {
 										return ';'; 
                   }
