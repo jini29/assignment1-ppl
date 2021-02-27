@@ -49,6 +49,9 @@ ALPHA [a-zA-Z]
 "++"                           {
                                         return OP_PLUSPLUS;
                   }
+"+="                           {
+                                        return OP_ADDINC;
+                  }
 "<="                           {
                                         return OP_LEQ ;
                   }
@@ -84,7 +87,9 @@ ALPHA [a-zA-Z]
 										return L_INTEGER;
 									}
 
-{ALPHA}+        { 
+"@"{ALPHA}("_"|{ALPHA}|{DIGIT}}+        {
+                                                                return T_ID;
+                                                          }      {
 									return T_ID;
 							  }
 

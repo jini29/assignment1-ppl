@@ -1,4 +1,7 @@
 C:\Users\Ellyg\AppData\Local\JetBrains\CLion2020.3\cygwin_cmake\bin\cmake.exe -DCMAKE_BUILD_TYPE=Debug -G "CodeBlocks - Unix Makefiles" /cygdrive/e/Users/Ellyg/CLionProjects/assignment1
--- Configuring done
--- Generating done
--- Build files have been written to: /cygdrive/e/Users/Ellyg/CLionProjects/assignment1/cmake-build-debug
+CMake Error at CMakeLists.txt:6 (set_target_properties):
+  set_target_properties Can not find target to add properties to: assignment1
+
+
+-- Configuring incomplete, errors occurred!
+See also "/cygdrive/e/Users/Ellyg/CLionProjects/assignment1/cmake-build-debug/CMakeFiles/CMakeOutput.log".
