@@ -89,9 +89,7 @@ ALPHA [a-zA-Z]
 
 "@"{ALPHA}("_"|{ALPHA}|{DIGIT}}+        {
                                                                 return T_ID;
-                                                          }      {
-									return T_ID;
-							  }
+                                                          }     
 
 <<EOF>>						{ return T_EOF ; }
 .									{ return yytext[0]; }
