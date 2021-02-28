@@ -25,6 +25,7 @@ YY_DECL;
 
 DIGIT [0-9] 
 ALPHA [a-zA-Z]
+FLOAT ("+"|"-"|""){DIGIT}+"."{DIGIT}+
 
 %%
 
@@ -87,9 +88,14 @@ ALPHA [a-zA-Z]
 										return L_INTEGER;
 									}
 
-"@"{ALPHA}("_"|{ALPHA}|{DIGIT}}+        {
+"@"{ALPHA}("_"|{ALPHA}|{DIGIT})+        {
                                                                 return T_ID;
                                                           }     
+
+{FLOAT}           {
+                    return L_FLOAT;
+                  } 
+
 "foreach"                           {
                                         return K_FOREACH;
                   }	
@@ -130,9 +136,6 @@ ALPHA [a-zA-Z]
                                         return K_THEN;
                   }
 
-"main"                           {
-                                        return K_MAIN;
-                  }
 "integer"                           {
                                         return K_INTEGER;
                   }
@@ -150,8 +153,3 @@ int dummy_function(){
 
   return 1;
 }
-
-
-
-
-
