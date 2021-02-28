@@ -90,7 +90,55 @@ ALPHA [a-zA-Z]
 "@"{ALPHA}("_"|{ALPHA}|{DIGIT}}+        {
                                                                 return T_ID;
                                                           }     
+"foreach"                           {
+                                        return K_FOREACH;
+                  }	
 
+"print"                           {
+                                        return K_PRINT;
+                  }
+
+"while"                           {
+                                        return K_WHILE;
+                  }
+
+"repeat"                           {
+                                        return K_REPEAT;
+                  }
+
+"until"                           {
+                                        return K_UNTIL;
+                  }
+
+"begin"                           {
+                                        return K_BEGIN;
+                  }
+
+"end"                           {
+                                        return K_END;
+                  }
+
+"declare"                           {
+                                        return K_DECLARE;
+                  }
+
+"if"                           {
+                                        return K_IF;
+                  }
+
+"then"                           {
+                                        return K_THEN;
+                  }
+
+"main"                           {
+                                        return K_MAIN;
+                  }
+"integer"                           {
+                                        return K_INTEGER;
+                  }
+"float"                           {
+                                        return K_FLOAT;
+                  }
 <<EOF>>						{ return T_EOF ; }
 .									{ return yytext[0]; }
 
