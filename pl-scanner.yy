@@ -87,7 +87,7 @@ ALPHA [a-zA-Z]
 										return L_INTEGER;
 									}
 
-"@"{ALPHA}("_"|{ALPHA}|{DIGIT}}+        {
+"@"{ALPHA}("_"|{ALPHA}|{DIGIT})+        {
                                                                 return T_ID;
                                                           }     
 "foreach"                           {
