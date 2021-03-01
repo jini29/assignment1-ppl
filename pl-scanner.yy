@@ -25,7 +25,7 @@ YY_DECL;
 
 DIGIT [0-9] 
 ALPHA [a-zA-Z]
-FLOAT ("+"|"-"|""){DIGIT}+"."{DIGIT}+
+FLOAT ("+"|"-")*{DIGIT}+"."{DIGIT}+
 
 %%
 
@@ -78,12 +78,7 @@ FLOAT ("+"|"-"|""){DIGIT}+"."{DIGIT}+
 "="							  { 
 										return OP_ASSIGN; 
                   }
-
-"main"					{ 
-										return K_MAIN; 
-                  }
-
-
+s
 {DIGIT}+					{ 
 										return L_INTEGER;
 									}
@@ -122,6 +117,10 @@ FLOAT ("+"|"-"|""){DIGIT}+"."{DIGIT}+
 
 "end"                           {
                                         return K_END;
+                  }
+
+"main"            {
+                    return K_MAIN;
                   }
 
 "declare"                           {
